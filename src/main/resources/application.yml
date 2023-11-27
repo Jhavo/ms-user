@@ -1,0 +1,25 @@
+server:
+  port: 8080
+logging:
+  level:
+    com.sermaluc.msuser: info
+spring:
+    jpa:
+        show-sql: true
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: update
+    h2:
+        console:
+            enabled: true
+    datasource:
+        url: jdbc:h2:mem:sermalucdb;DB_CLOSE_DELAY=- 1;DB_CLOSE_ON_EXIT=FALSE
+        username: test
+        password: test
+springdoc:
+    api-docs:
+        path: /documentation/json
+    swagger-ui:
+        path: /documentation
