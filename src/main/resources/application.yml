@@ -1,8 +1,10 @@
 server:
   port: 8080
+
 logging:
   level:
     com.sermaluc.msuser: info
+
 spring:
     jpa:
         show-sql: true
@@ -14,12 +16,21 @@ spring:
     h2:
         console:
             enabled: true
+            path: /h2-ui
     datasource:
         url: jdbc:h2:mem:sermalucdb;DB_CLOSE_DELAY=- 1;DB_CLOSE_ON_EXIT=FALSE
         username: test
         password: test
+
 springdoc:
     api-docs:
         path: /documentation/json
     swagger-ui:
         path: /documentation
+
+app:
+    validation:
+        email:
+            pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\\\\.[a-z]{2,3}"
+        password:
+            pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,12}$"

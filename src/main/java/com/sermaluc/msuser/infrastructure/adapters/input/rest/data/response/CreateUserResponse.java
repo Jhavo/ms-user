@@ -5,24 +5,25 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-@Data
 @Builder
-@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@NoArgsConstructor
 public class CreateUserResponse implements Serializable {
 
     private UUID id;
     private String name;
     private String email;
-    private List<UserPhoneResponse> phone;
+    private List<UserPhoneResponse> phones;
     private Date created;
     private Date modified;
     private Date lastLogin;

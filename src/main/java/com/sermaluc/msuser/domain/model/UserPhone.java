@@ -2,7 +2,6 @@ package com.sermaluc.msuser.domain.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 import lombok.AllArgsConstructor;
@@ -18,17 +17,15 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class User implements Serializable {
+public class UserPhone implements Serializable {
 
-    private UUID id;
-    private String name;
-    private String email;
-    private String password;
-    private List<UserPhone> phones;
+    private Long id;
+    private UUID userId;
+    private String number;
+    private String cityCode;
+    private String countryCode;
     private Date created;
     private Date modified;
-    private Date lastLogin;
-    private String token;
     private Boolean isActive;
 
 }

@@ -1,6 +1,5 @@
 package com.sermaluc.msuser.domain.event;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -9,15 +8,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
+@Builder
 @Getter
 @Setter
-@Builder
-@ToString
-@AllArgsConstructor
 @NoArgsConstructor
-public class UserCreatedEvent implements Serializable {
+@AllArgsConstructor
+public class UserCreatedEvent {
 
     private UUID id;
 

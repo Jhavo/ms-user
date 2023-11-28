@@ -30,53 +30,47 @@ import lombok.ToString;
 @Setter
 @Entity
 @Builder
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@Table(name = "user")
+@Table(name = "users")
 public class UserEntity implements Serializable {
 
     @Id
-    @Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "uuid")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "email")
+    @Column(unique = true)
     private String email;
 
-    @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy = "userPhone", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<UserPhoneEntity> phone = new ArrayList<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<UserPhoneEntity> phones = new ArrayList<>();
 
-    @Column(name = "created")
     private Date created;
 
-    @Column(name = "modified")
     private Date modified;
 
-    @Column(name = "lastLogin")
     private Date lastLogin;
-    
-    @Column(name = "token")
+
     private String token;
 
-    @Column(name = "isActive")
-    private boolean isActive;
+    private Boolean isActive;
 
 	@PrePersist
-	private void onCreated() {
+	public void onCreated() {
 		Instant instant = Instant.now();
 		this.created = Date.from(instant);
+        this.lastLogin = Date.from(instant);
 		this.isActive = true;
 	}
 
 	@PreUpdate
-	private void onUpdated() {
+    private void onUpdated() {
 		Instant instant = Instant.now();
 		this.modified = Date.from(instant);
 	}

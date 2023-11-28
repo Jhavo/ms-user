@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -30,36 +29,29 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "userPhone")
+@Table(name = "userPhones")
 public class UserPhoneEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @JoinColumn(name = "userId", referencedColumnName = "id")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(optional = true, fetch = FetchType.LAZY)
     private UserEntity user;
 
-    @Column(name = "number")
     private String number;
 
-    @Column(name = "citycode")
-    private String citycode;
+    private String cityCode;
 
-    @Column(name = "contrycode")
-    private String contrycode;
+    private String countryCode;
 
-    @Column(name = "created")
     private Date created;
 
-    @Column(name = "modified")
     private Date modified;
 
-    @Column(name = "isActive")
     private Boolean isActive;
 
 	@PrePersist

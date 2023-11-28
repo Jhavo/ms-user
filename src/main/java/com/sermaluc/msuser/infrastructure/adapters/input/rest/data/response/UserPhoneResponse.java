@@ -1,24 +1,30 @@
 package com.sermaluc.msuser.infrastructure.adapters.input.rest.data.response;
 
 import java.io.Serializable;
-
-import com.fasterxml.jackson.annotation.JsonInclude;
+import java.util.Date;
+import java.util.UUID;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-@Data
 @Builder
-@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@NoArgsConstructor
 public class UserPhoneResponse implements Serializable {
 
     private Long id;
     private String number;
-    private String citycode;
-    private String contrycode;
+    private String cityCode;
+    private String countryCode;
+    private Date created;
+    private Date modified;
+    private Boolean isActive;
 
 }

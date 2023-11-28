@@ -2,9 +2,7 @@ package com.sermaluc.msuser.infrastructure.adapters.input.rest.data.request;
 
 import java.io.Serializable;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,27 +11,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+@Builder
 @Getter
 @Setter
-@Builder
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserPhoneRequest implements Serializable {
 
-	@Valid
-    @NotEmpty
-	@NotNull
+	@NotEmpty(message = "Number is required")
     private String number;
 
-	@Valid
-    @NotEmpty
-	@NotNull
-    private String citycode;
+	@NotEmpty(message = "City code is required")
+    private String cityCode;
 
-	@Valid
-    @NotEmpty
-	@NotNull
-    private String contrycode;
+	@NotEmpty(message = "Country code is required")
+    private String countryCode;
     
 }
