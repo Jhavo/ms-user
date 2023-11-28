@@ -79,16 +79,6 @@
 	</dependencies>
     <build>
         <plugins>
-            <!--<plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${project.parent.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.7.1</version>
-            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -124,7 +114,6 @@
                 <version>0.8.6</version>
                 <configuration>
                     <includes>
-                        <include>com/sermaluc/**/mapper/**</include>
                         <include>com/sermaluc/**/service/**</include>
                     </includes>
                     <rules>

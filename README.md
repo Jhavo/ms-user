@@ -1,5 +1,5 @@
 # ms-user
-Technical challenge for Sermaluc using Spring, JPA y h2 in-memory database
+Technical challenge for Sermaluc using Hex architecture, DDD, Spring, JPA y h2 in-memory database
 
 ## Prerequisites 
 - Java 11
