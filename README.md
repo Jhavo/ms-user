@@ -18,17 +18,17 @@ Technical challenge for Sermaluc using Spring, JPA y h2 in-memory database
 - Postman (or any RESTful API testing tool)
 - Swagger can be launched in Browser: http://localhost:8080/swagger-ui/index.html
 
-![image]()
+![image](https://github.com/Jhavo/ms-user/blob/main/doc/images/swagger.jpg)
 
 - H2 Console On Browser: http://localhost:8080/h2-ui
 
-![image]()
+![image](https://github.com/Jhavo/ms-user/blob/main/doc/images/h2.jpg)
 
 - Code Coverage: After building the project you can find code coverage in the target path :- /ma-user/target/site/jacoco/index.html
 
 For E.g.: Code Coverage of StudentController looks like this:
 
-![image]()
+![image](https://github.com/Jhavo/ms-user/blob/main/doc/images/jacoco.jpg)
 
 ###  Build and Run application
 _GOTO >_ **the root of the project** and try below command in terminal
